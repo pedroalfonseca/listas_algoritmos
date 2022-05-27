@@ -250,17 +250,11 @@ int main(void)
     {
         for (int j = 0; j < N; j++)
         {
-            for (int k = 0; k < N; k++)
-            {
-                delete[] agents[i]->matrix[j];
-            }
-            delete[] agents[i]->matrix;
+            delete[] agents[i]->matrix[j];
         }
-
-        for (int j = 0; j < K; j++)
-        {
-            delete[] agents[i]->clique;
-        }
+        delete[] agents[i]->matrix;
+        delete[] agents[i]->clique;
+        delete agents[i];
     }
 }
 
